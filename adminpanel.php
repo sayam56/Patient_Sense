@@ -62,7 +62,7 @@ catch(PDOException $e){
      <table class="table table-striped" style="width: 80%; margin: auto;  ">
                 <thead class="thead-dark" style="text-align: center;">
 
-                  <tr>
+                  <tr style="text-align: center;">
                     <th scope="col" width="9%">Serial No.</th>
                     <th scope="col" width="18%">Doctor Name</th>
                     <th scope="col" width="18%">Appoinment Date</th>
