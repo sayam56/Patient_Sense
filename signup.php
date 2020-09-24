@@ -38,9 +38,11 @@
         <p>Email</p>
         <input type="email" name="email">
         <p>Password</p>
-        <input type="text">
-        <p>Confirm pasword</p>
-        <input type="text" name="pass"><br>
+        <!-- <p>Confirm pasword</p>-->
+        <input type="Password" name="pass"><br> 
+        <p>Register As:</p>
+        <input type="radio" name="role"  value="user" checked> Regular User
+        <input type="radio" name="role"  value="doctor"> Doctor
         <input type="submit" value="Register">
     </form>
     </div>
@@ -59,7 +61,11 @@
 		if(isset($_POST['email']))
 			$email=$_POST['email'];
 		if(isset($_POST['pass']))
-			$pass=sha1( $_POST['pass']);
+            $pass=sha1( $_POST['pass']);
+           /* $pass=$_POST['pass'];*/
+			
+         if(isset($_POST['role']))
+            $role = $_POST['role'];
 
 		try{
                 $conn=new PDO("mysql:host=localhost;dbname=patient_sense;",'root','');
@@ -72,17 +78,38 @@
             }
 
 
+            if ($role == 'user') {
 
-            try{
-            	$query="INSERT INTO users VALUES('$username','$first_name','$last_name','$email','$pass')";
-            	$conn->exec($query);
-            	echo "<script>location.assign('login.php')</script>";
+                try{
+                    $query="INSERT INTO users VALUES('$username','$first_name','$last_name','$email','$pass')";
+                    $conn->exec($query);
+                    echo "<script>location.assign('login.php')</script>";
 
 
+                }
+                catch(PDOException $e){
+                    echo "<script>window.alert('insertion error');</script>";
+                }
             }
-            catch(PDOException $e){
-                echo "<script>window.alert('insertion error');</script>";
+            else {
+
+
+
+                try{
+                    $query="INSERT INTO doctors (username, f_name, l_name, email, pass) VALUES('$username','$first_name','$last_name','$email','$pass')";
+                    $conn->exec($query);
+                    echo "<script>location.assign('login.php')</script>";
+
+
+                }
+                catch(PDOException $e){
+                    echo "<script>window.alert('insertion error');</script>";
+                }
+                
             }
+
+
+           
 
 
 

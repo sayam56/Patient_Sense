@@ -25,6 +25,11 @@ box-shadow:  5px -5px 10px rgba(2,0,36,1),
 }
 
 
+.get__startedContent img{
+    width: 300px;
+    margin-top: 35px;
+}
+
 .login input[type="text"], input[type="password"] , input[type="email"]
 {
     border: none;
