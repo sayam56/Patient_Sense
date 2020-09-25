@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2020 at 11:16 PM
+-- Generation Time: Sep 25, 2020 at 02:50 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -78,7 +78,9 @@ CREATE TABLE `approval` (
 --
 
 INSERT INTO `approval` (`approval_id`, `doc_id`, `status`) VALUES
-(3, 6, 'approved');
+(3, 6, 'approved'),
+(4, 7, 'approved'),
+(5, 8, 'pending');
 
 -- --------------------------------------------------------
 
@@ -106,8 +108,9 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`id`, `username`, `f_name`, `l_name`, `department`, `schedule_start`, `schedule_end`, `location`, `price`, `description`, `email`, `pass`) VALUES
-(4, 'test123', 'test', '123', NULL, NULL, NULL, NULL, NULL, NULL, 'test@gmail.com', '1234'),
-(6, 'doc1', 'Doc', 'First', 'Medicine', '04:37:00', '16:34:00', 'Arambag', 1500, 'bla', 'doc1@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
+(6, 'doc1', 'Doc', 'First', 'Medicine', '04:37:00', '16:34:00', 'Arambag', 1500, 'bla', 'doc1@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(7, 'doc2', 'Second', 'Doctor', 'Nuro Surgeon', '04:55:00', '07:55:00', 'Panthapath', 500, 'MBBS, FRCS', 'second@doctor.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
+(8, 'doc3', 'third', 'doctor', 'Immunologists', '09:03:00', '10:04:00', 'Rajshahi', 6500, 'MBBS', 'third@doctor.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
 
 -- --------------------------------------------------------
 
@@ -169,13 +172,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `approval`
 --
 ALTER TABLE `approval`
-  MODIFY `approval_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `approval_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

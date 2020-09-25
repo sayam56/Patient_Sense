@@ -153,6 +153,13 @@ height: 50vh;
     text-decoration: none;
     color: whitesmoke;
 }
+
+.links a:hover{
+   
+   
+    text-decoration: underline;
+    color: whitesmoke;
+}
     
 
     

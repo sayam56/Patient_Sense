@@ -1,3 +1,16 @@
+body{
+    font-family: sans-serif;
+    font-size: 14px;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+     background: rgb(2,0,36);
+background: linear-gradient(233deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 7%, rgba(0,212,255,1) 100%);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .header{
     display: flex;
     justify-content: space-between;
@@ -28,16 +41,17 @@
 }
 
 .outerbox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+display: inline;
+width: 170vh;
+position: absolute;
+left: 10%;
+top: 19%;
+
 }
+
 .outerbox__left{
     align-self: center;
-    margin-right: 50px;
-    
-    
+    margin-right: 50px;   
 }
 
 form{
@@ -74,4 +88,25 @@ form input[type="submit"]
     font-weight: bold;
     color: whitesmoke;
     outline: transparent;
+}
+
+.btnArea{
+    margin-top: -35%;
+    margin-left: -65%;
+}
+
+.btn{
+    display: inline-block;
+ 
+}
+#apprvBTN{
+    background: green;
+}
+
+#docBTN{
+    background: red;
+}
+
+#docList{
+    display: none;
 }

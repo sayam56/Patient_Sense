@@ -65,7 +65,7 @@ catch(PDOException $e){
 <div class="topbar">
 
     <div class="name">
-        <h2><?php echo $fname." ".$lname; ?></h2>
+        <h2>Doctor's  Name: <?php echo $fname." ".$lname; ?></h2>
     </div>
 
     <div class="logoutBTN">
@@ -301,11 +301,11 @@ catch(PDOException $e){
 
 
 ?>
-
+<!-- 
 <div class="footerLogo">
     <img src="res/logo.png">
 </div>
-
+ -->
 
 
 
