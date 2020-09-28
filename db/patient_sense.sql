@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2020 at 02:50 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Sep 28, 2020 at 07:04 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -58,8 +58,10 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`doctor_id`, `username`, `appointment_date`, `appoinment_time`) VALUES
-(6, 'sayam56', '2020-09-30', '15:58:49'),
-(6, 'neo', '2020-09-25', '04:41:49');
+(16, 'rock', '2020-09-26', '20:38:00'),
+(16, 'alex', '2020-09-28', '20:18:00'),
+(9, 'neo', '2020-09-28', '09:23:00'),
+(10, 'neo', '2020-09-28', '04:57:00');
 
 -- --------------------------------------------------------
 
@@ -80,7 +82,11 @@ CREATE TABLE `approval` (
 INSERT INTO `approval` (`approval_id`, `doc_id`, `status`) VALUES
 (3, 6, 'approved'),
 (4, 7, 'approved'),
-(5, 8, 'pending');
+(5, 8, 'rejected'),
+(6, 14, 'approved'),
+(7, 16, 'approved'),
+(8, 17, 'approved'),
+(9, 18, 'approved');
 
 -- --------------------------------------------------------
 
@@ -108,9 +114,19 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`id`, `username`, `f_name`, `l_name`, `department`, `schedule_start`, `schedule_end`, `location`, `price`, `description`, `email`, `pass`) VALUES
-(6, 'doc1', 'Doc', 'First', 'Medicine', '04:37:00', '16:34:00', 'Arambag', 1500, 'bla', 'doc1@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(6, 'doc1', 'Doc', 'First', 'Orthopedics', '04:37:00', '16:34:00', 'bashundhara', 1500, 'bla', 'doc1@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
 (7, 'doc2', 'Second', 'Doctor', 'Nuro Surgeon', '04:55:00', '07:55:00', 'Panthapath', 500, 'MBBS, FRCS', 'second@doctor.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
-(8, 'doc3', 'third', 'doctor', 'Immunologists', '09:03:00', '10:04:00', 'Rajshahi', 6500, 'MBBS', 'third@doctor.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
+(8, 'doc3', 'third', 'doctor', 'Immunologists', '09:03:00', '10:04:00', 'Rajshahi', 6500, 'MBBS', 'third@doctor.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(9, 'doc3', 'Steven', 'Charles', 'Orthopedics', '09:03:00', '10:04:00', 'Bashundhara', 1500, 'MBBS', 'third@doctor.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(10, 'doc1', 'Alex', 'Roth', 'Orthopedics', '04:37:00', '16:34:00', 'bashundhara', 1500, 'bla', 'doc1@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(11, 'doc2', 'Chris ', 'Lynn', 'Orthopedics', '04:55:00', '07:55:00', 'bashundhara', 500, 'MBBS, FRCS,FCPS', 'second@doctor.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
+(12, 'doc2', 'Stewart', 'Lynn', 'Orthopedics', '04:55:00', '07:55:00', 'bashundhara', 500, 'MBBS, FRCS,FCPS', 'second@doctor.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
+(13, 'doc2', 'Ivanka', 'Lynn', 'Orthopedics', '04:55:00', '07:55:00', 'bashundhara', 500, 'MBBS, FRCS,FCPS', 'second@doctor.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
+(14, 'kkdep', 'KK', 'Depp', 'Orthopedics', '17:47:00', '19:47:00', 'bashundhara', 800, '5yrs', 'koiri@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(15, 'tymp2', 'Typhoon ', 'R.', NULL, NULL, NULL, NULL, NULL, NULL, 'tyr@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(16, 'asdf', 'Salim', 'S.', 'Orthopedics', '19:58:00', '21:58:00', 'bashundhara', 1000, 'Green Life Medical\r\nMBBS\r\n2years', 'aaaa@gmail.com', '3da541559918a808c2402bba5012f6c60b27661c'),
+(17, 'Adam', 'Adam', 'p', 'Orthopedics', '19:03:00', '21:03:00', 'bashundhara', 1000, 'mbbs', 'adam@gmail.com', '3da541559918a808c2402bba5012f6c60b27661c'),
+(18, 'brad', 'brad', 'p', 'cardiologist', '18:22:00', '22:22:00', 'bashundhara', 600, 'MBBS,FCPS', 'p@p.com', '3da541559918a808c2402bba5012f6c60b27661c');
 
 -- --------------------------------------------------------
 
@@ -131,7 +147,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `f_name`, `l_name`, `email`, `pass`) VALUES
+('alex', 'alex', 'steve', 'alex@steve.com', '3da541559918a808c2402bba5012f6c60b27661c'),
+('mk2', 'Mike', 'T.', 'aaa@gmail.com', '3da541559918a808c2402bba5012f6c60b27661c'),
 ('neo', 'neon', 'might', 'neo.might@gmail.com', '3da541559918a808c2402bba5012f6c60b27661c'),
+('rock', 'rock', 'afeller', 'wwww@gmail.com', '3da541559918a808c2402bba5012f6c60b27661c'),
 ('sayam56', 'Ali', 'Iktider', 'aisayam.sayam@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
 
 --
@@ -172,13 +191,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `approval`
 --
 ALTER TABLE `approval`
-  MODIFY `approval_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `approval_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables

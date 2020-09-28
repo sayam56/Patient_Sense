@@ -46,7 +46,7 @@ catch(PDOException $e){
 <div class="topbar">
 
     <div class="name">
-        <h2>Name: <?php echo $username ?></h2>
+        <h2>Admin</h2>
     </div>
 
     <div class="logoutBTN">
