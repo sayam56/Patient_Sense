@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700&display=swap');
+
+
+body{
+  overflow-x: hidden; /*to keep from flowing out vertically*/
+  font-family: 'Exo', sans-serif;
+  background: linear-gradient(233deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 7%, rgba(0,212,255,1) 100%);
+    
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+
+.offset:before{
+  height: 4rem;
+  margin-top: -3.5rem;
+  content: "";
+  display: block;
+}
+
+/*navbar section*/
+
+.navbar{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .1rem;
+  background-color: rgba(0,212,255,.1)!important;
+}
+
+/*.navbar-brand img{
+  height: 2rem; use this to manipulate the logo when you have it
+}*/
+#logo{
+  height: 35px;
+  color: black;
+}
+
+#logo img{
+  height: 50px;
+  margin-top: -15px;
+}
+
+#logo:hover{
+  color: black;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.navbar-nav li{
+  padding-right: .7rem;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  color: black;
+  padding-top: .8rem;
+}
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover{
+  /*this is to hover on the nav items and to change while on the scroll spy thing*/
+   color: black;
+  text-decoration: underline;
+  font-weight: 700;
+  
+}
+
+
+/*slider*/
+.carousel-item{
+  height: 100vh;
+  background: no-repeat center center fixed;
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.carousel-caption{
+  position: absolute;
+  top: 38%;
+  text-transform: uppercase;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.carousel-caption h1{
+  color: black;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: .3rem;
+  text-shadow: .1rem .1rem .8rem whitesmoke;
+  padding-bottom: 1rem;
+}
+
+
+.carousel-caption h4{
+  margin-top: -100px;
+  color: black;
+  letter-spacing: .3rem;
+  text-shadow: .1rem .1rem .8rem whitesmoke;
+}
+
+.carousel-caption p{
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+  letter-spacing: .3rem;
+  text-shadow: .1rem .1rem .8rem whitesmoke;
+  padding-bottom: 1.6rem;
+}
+
+.BUTTON{
+  background: black;
+  border-width: medium;
+  border-radius: 0;
+  font-size: 1.1rem;
+
+}
+.bestDoc{
+  margin-top: 20px;
+}
+
+.jumbotron{
+  border-radius: 0;
+  padding: 3rem 0 2rem;
+  background-color: rgba(255,255,255,.9);
+  margin-bottom: 0;
+}
+
+#homedesc img{
+  height: 500px;
+/*  border: 2px solid white;*/
+ 
+
+}
+
+.textbox{
+  display: inline-block;
+  background: white;
+  border-radius: 25px;
+  height: 35vh;
+  width: 30vw;
+   font-size: 1rem;
+  font-weight: 700;
+  color: black;
+  letter-spacing: .2rem;
+  text-shadow: .1rem .1rem .8rem whitesmoke;
+  margin-top: -150px;
+  padding: 15px;
+
+}
+
+
+
+h1.heading{
+
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 1.9rem;
+}
+
+.heading-underline{
+  width: 3rem;
+  height: .2rem;
+  background-color: yellow;
+  box-shadow: 5px 5px 100px 5px yellow;
+  margin: 0 auto 2rem;
+}
+
+.card{
+
+  margin: 2rem;
+  margin-top: -2rem;
+}
+
+.card img{
+  height: 80vh;
+}
+
+svg.svg-inline--fa{
+  font-size: 10rem;
+  margin: 1.2rem 3rem 0 0;
+  color: white;
+}
+
+svg.svg-inline--fa:hover{
+  color: yellow;
+}
+
+footer{
+  background-color: rgba(0,0,0,.6);
+  color: white;
+  padding: 2rem 0 3rem;
+  margin-top: 1rem;
+
+}
+
+footer a{
+  color: white;
+}
+
+footer a:hover{
+  text-decoration: none;
+  color: yellow;
+}
+
+hr.socket{
+  border-top: 1px solid rgba(255, 255, 255,.6);
+  width: 100%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+
+/*darkening the 2nd div offer*/
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+
+  }
+@media (max-width: 768px) {
+  
+}
+@media (max-width: 576px) {
+  
+}
+
+
+/*---Firefox Bug Fix --*/
+.carousel-item {
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+/*--- Fixed Background Image --*/
+figure {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  margin: 0!important;
+}
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#fixed {
+  background-image: url('img/mac.png');
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+}
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+
+
+
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+
+
+
+
+
+
+
+

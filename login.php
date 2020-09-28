@@ -13,7 +13,7 @@
 
 <div class="outerbox">
     <div class="get__started">
-    <img class="logo" src="res/logo.png" alt="none">
+    <img class="logo" src="res/logo.png" alt="none" onclick="home();">
     <h1>Get Started</h1>
     <div class="buttons">
     <button>Sign in with Google</button><br>
@@ -195,6 +195,12 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 ?>
 
 <script type="text/javascript" src="adminlogincheck.js"></script>
+
+<script type="text/javascript">
+    function home(){
+       window.location.href = "index.html";
+    }
+</script>
 
     
 </body>
